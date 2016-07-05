@@ -24,4 +24,8 @@ curl -Uri "https://apis.daum.net/cafe/v1/recent_articles/DFWA.json?appkey={your_
 ```
 ![그렇다. 난 단지 낚시 카페의 최신글이 보고 싶었을 뿐이다. RSS 없앤 Daum 나쁜 놈들..](http://i.imgur.com/kTUF4vV.jpg)
 
-참고로, [Daum Developers](http://developers.daum.net/services/apis/cafe/v1/recent_articles/cafeCode.format)에서는 OAuth 를 통한 예제만 나와 있고, {apikey}도 쓸수 있다고 되어 있는데.. 당연히 `apikey` 일거라 생각했는데 `appkey` 를 써야 하는거였다. 
+참고로, [Daum Developers](http://developers.daum.net/services/apis/cafe/v1/recent_articles/cafeCode.format)에서는 OAuth 를 통한 예제만 나와 있고, {apikey}도 쓸수 있다고 되어 있어 Parameter가 당연히 `apikey` 일거라 생각했는데 `appkey` 를 써야 하는거였다. 
+
+=> 이게 명백한 다음의 네이밍 일치 실패가 아닌가 하는 의심이 드는 것은.. 다른 다음 API 의 경우 `apikey` 를 쓰기 때문이다. 
+
+참조 : [다음 지도 API](http://apis.map.daum.net/web/guide/)
