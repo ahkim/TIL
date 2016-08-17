@@ -35,8 +35,15 @@
 
 ```
 
+# Usage
 
+* Open integrated terminal in Visual Studio Code
+* mkdir {python project}
+* cd {python project}
+* create a file in that folder e.g. words.py
+* execute the file like following
+: Note that you will have to include C:\Python34 in environment variable - PATH beforehand. 
+	
+	`python words.py`
 
  
-
-
