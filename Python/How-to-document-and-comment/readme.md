@@ -51,7 +51,7 @@ def main(url):
     print_items(words)
 
 if __name__ == '__main__':
-    main(sys.argv[1])
+    main(sys.argv[1]) # The 0th arg is the module filename
 ```
 
 You can check the documentation with following from command prompt.
