@@ -53,3 +53,10 @@ def main(url):
 if __name__ == '__main__':
     main(sys.argv[1])
 ```
+
+You can check the documentation with following from command prompt.
+```
+> Python
+>>> import words
+>>> help(words)
+```
