@@ -1,6 +1,6 @@
 # How to document using docstring
 
-Following sample was written based on Google Python Style Guide
+Following sample was written based on [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
 
 ```python
 """Retreive and print words from a URL.
