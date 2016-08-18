@@ -8,7 +8,9 @@ Following sample was written based on [Google Python Style Guide](https://google
 Usage:
 
     python words.py <URL>
+    e.g. python words.py http://sixty-north.com/c/t.txt
 
+    words.py <UR> # if Pylauncher is installed
 """
 
 import sys
