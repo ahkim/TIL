@@ -1,4 +1,4 @@
-# How to document using docstring
+# How to document using docstring and comment
 
 Following sample was written based on [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
 
