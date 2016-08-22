@@ -2,7 +2,7 @@
 
 ### Don't get confused between two different queue, Azure Queue vs Azure Service Bus Queue
 
-Check the differences [here](https://azure.microsoft.com/en-us/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
+Check the differences [here](https://azure.microsoft.com/en-us/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/) and [here](http://www.cloudcasts.net/devguide/Default.aspx?id=12004)
 
 ### Azure Service Bus queue also doesn't guarantee FIFO (without messaging session)
 
