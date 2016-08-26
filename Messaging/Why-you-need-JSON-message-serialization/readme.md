@@ -29,6 +29,8 @@ Following is a typical Data Contract Serialization. [DataContract] inherits Syst
 
 ### How to serialize with JSON
 
+** using newtonsoft json library*
+
 ![](http://i.imgur.com/H2lFSTx.png)
 
 ### How to deserialize JSON
