@@ -45,6 +45,9 @@ m_QueueClient.OnMessage(message => ProcessMessage(message), options);
 private void ProcessMessage(BrokeredMessage message)
 {
 	// Process the message
+
+	// Complete the message
+    message.Complete();
 }
 
 ```
