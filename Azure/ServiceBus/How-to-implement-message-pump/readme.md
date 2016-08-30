@@ -47,7 +47,29 @@ private void ProcessMessage(BrokeredMessage message)
 	// Process the message
 
 	// Complete the message
-    message.Complete();
+    try
+    {
+        // Process the message
+        PizzaOrder order = message.GetBody<PizzaOrder>();
+
+        // Process the message
+        CookPizza(order);
+
+        // Mark the message as complete
+        message.Complete();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Exception: " + ex.Message);
+
+        // Abandon the message
+        message.Abandon();
+
+        // Deadletter the message
+        //message.DeadLetter();
+
+        // Or do nothing
+    }
 }
 
 ```
