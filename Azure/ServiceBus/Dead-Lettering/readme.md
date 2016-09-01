@@ -64,4 +64,19 @@ namespaceManager.CreateSubscription(subscriptionDescription);
 ```c#
 // Following inserts DeadLetterReason and DeadLetterErrorDescription property in Message header. 
 orderMsg.DeadLetter("Invalid order", "Error in billing address");
+
+catch(MessagingException mex)
+{
+	if(message.DeliveryCount > 3)
+	{
+		message.DeadLetter(mex.Message, mex.ToString());
+	}
+	else
+	{
+		// Abaondon the message
+		// When this is called, message will be immediately available in the queue again. 
+		// Sometimes, commenting this out is better not to quickly exhaust delivery count. Vice versa. 
+		message.Abandon();
+	}
+}
 ```
