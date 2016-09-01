@@ -62,8 +62,15 @@ namespaceManager.CreateSubscription(subscriptionDescription);
 #### Explicit
 
 ```c#
+//poison message
+//////////////
+
+// check content and see if messages are poisonous
 // Following inserts DeadLetterReason and DeadLetterErrorDescription property in Message header. 
 orderMsg.DeadLetter("Invalid order", "Error in billing address");
+
+//Processing Failures
+/////////////////////
 
 catch(MessagingException mex)
 {
@@ -79,4 +86,49 @@ catch(MessagingException mex)
 		message.Abandon();
 	}
 }
+
+// message expiry
+//////////////////////
+var queueDescription = new QueueDescription(Settings.Queuename)
+{
+	// Specify a default time to live for 15 mins
+	DefaultMessageTimeToLive = TimeSpan.FromMinutes(15),
+	EnableDeadLetteringOnMessageExpiration = true // default is false
+};
+
+```
+
+### Where can you set message expiry?
+
+![](http://i.imgur.com/UJqGZrQ.png)
+
+- Sending Application
+	- message.TimeToLive
+- Queue
+	- queue.DefaultMessageTimeToLive
+- Subscription
+	- subscription.DefaultMessageTimeToLive
+
+```c#
+// sending application
+// put timeout on message itself
+//////////////////////
+var message = new BrokeredMessage();
+
+// Set the message time to live up to 10 mins
+message.TimeToLive = TimeSpan.FromMinutes(10);
+
+// The message will be set to expire 10 minutes after it is sent to the service bus
+queueClient.Send(message);
+
+// on messaging entity
+// put timeout on entity(queue/subscription)
+//////////////////////
+var queueDescription = new QueueDescription(Settings.Queuename)
+{
+	// Specify a default time to live for 15 mins
+	DefaultMessageTimeToLive = TimeSpan.FromMinutes(15)
+};
+
+namespaceManager.CreateQueue(queueDescription);
 ```
