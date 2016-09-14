@@ -45,3 +45,7 @@ Note : Following is *very* important in configuring the behavior.
 - Add the custom WebRequestInterceptor extension
 - Set the httpTransport element “**ManualAddressing**” attribute to **true**
 	- If not, you will end up with endpoint not found exception
+
+### Step 4 - Extend REST behavior to support Json
+
+REST behavior started off at step 1 only supports xml. You will need to extend this to support posting Json message to target server. 
